@@ -10,7 +10,9 @@ class BancosController extends Controller
 {
     public function index(){
 
-        return view('bancos.index');
+        $bancos = Bancos::get();
+
+        return view('bancos.index', compact('bancos'));
         
     }
 
@@ -23,6 +25,8 @@ class BancosController extends Controller
         $dados = $request->all();
 
         Bancos::create($dados);
+
+        return redirect(route('bancos.index'));
 
     }
 }

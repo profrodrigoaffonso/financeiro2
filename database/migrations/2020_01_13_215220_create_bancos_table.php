@@ -17,7 +17,7 @@ class CreateBancosTable extends Migration
             $table->bigIncrements('id');
             $table->string('codigo', 3);
             $table->string('nome', 50);
-            $table->string('agencia', 4)->nullable();
+            $table->string('agencia', 6)->nullable();
             $table->string('conta', 10)->nullable();
             $table->enum('correntista', ['s', 'n'])->default('n');
             $table->timestamps();
