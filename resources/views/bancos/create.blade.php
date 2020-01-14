@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-<form action="{{ route('bancos.store') }}" method="post">
+<form action="{{ route('bancos.store') }}" method="POST">
     @csrf
     <div class="form-group">
       <label for="exampleInputEmail1">Código</label>

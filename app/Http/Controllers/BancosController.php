@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Bancos;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\BancosRequest;
 
 class BancosController extends Controller
 {
@@ -20,7 +21,7 @@ class BancosController extends Controller
         return view('bancos.create');
     }
 
-    public function store(Request $request){
+    public function store(BancosRequest $request){
 
         $dados = $request->all();
 
