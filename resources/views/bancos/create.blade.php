@@ -2,7 +2,7 @@
 
 @section('content')
 <form action="{{ route('bancos.store') }}" method="post">
-    {{ Form::token() }}
+    @csrf
     <div class="form-group">
       <label for="exampleInputEmail1">Código</label>
       <input type="text" class="form-control" id="codigo" name="codigo">
