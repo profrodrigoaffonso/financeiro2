@@ -27,8 +27,8 @@
     </div>
     <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" value="s" id="correntista" name="correntista">
-      <label class="form-check-label" for="exampleCheck1">Correntista</label>
+      <label class="form-check-label" for="correntista">Correntista</label>
     </div>
-    <button type="submit" class="btn btn-primary">Enviar</button>
+    <button type="submit" class="btn btn-primary">Salvar</button>
   </form>
 @endsection
