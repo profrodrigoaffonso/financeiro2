@@ -21,6 +21,8 @@ Route::get('/login', function () {
 
 Route::post('/login', 'Auth\LoginController@login')->name('login.login');
 Route::get('/logout', 'Auth\LoginController@logout')->name('login.logout');
+Route::get('/inserir', 'PagamentosController@inserir')->name('pagamentos.inserir');
+Route::post('/salvar', 'PagamentosController@salvar')->name('pagamentos.salvar');
 
 Route::prefix('home')->middleware('auth')->group(function () {
     Route::get('/', function () {
