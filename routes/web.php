@@ -19,9 +19,15 @@ Route::get('/login', function () {
     return view('auth.login');
 });
 
+Route::get('/app', function () {
+    return view('app.index');
+});
+
 Route::post('/login', 'Auth\LoginController@login')->name('login.login');
 Route::get('/logout', 'Auth\LoginController@logout')->name('login.logout');
 Route::get('/inserir', 'PagamentosController@inserir')->name('pagamentos.inserir');
+Route::get('/saques', 'SaquesController@inserir')->name('saques.inserir');
+Route::post('/saques-salvar', 'SaquesController@salvar')->name('saques.salvar');
 Route::post('/salvar', 'PagamentosController@salvar')->name('pagamentos.salvar');
 
 Route::prefix('home')->middleware('auth')->group(function () {
