@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<h1 class="text-center">Inserir</h1>
+<h1 class="text-center">Saques</h1>
 <form action="{{ route('saques.salvar') }}" method="POST">
     @csrf
     <div class="form-group">
