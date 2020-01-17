@@ -24,6 +24,7 @@
             <thead>
                 <tr>
                     <th scope="col">Forma de Pagamento</th>
+                    <th scope="col">Categoria</th>
                     <th scope="col">Valor</th>
                     <th scope="col">Data Hora</th>
                 </tr>
@@ -32,6 +33,7 @@
                 @foreach($pagamentos as $pagamento)
                 <tr>
                     <td>{{ $pagamento->formaPagamento }}</td>               
+                    <td>{{ $pagamento->Categoria }}</td>               
                     <td>{{ number_format($pagamento->valor, 2, ',', '.') }}</td>               
                     <td>{{ date('d/m/Y H:s', strtotime($pagamento->data_hora)) }}</td>               
                 @endforeach            

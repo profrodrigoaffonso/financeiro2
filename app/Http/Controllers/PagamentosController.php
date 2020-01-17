@@ -46,9 +46,11 @@ class PagamentosController extends Controller
         $pagamentos = Pagamentos::select(
 
             'pagamentos.*',
-            'forma_pagamentos.nome AS formaPagamento'
+            'forma_pagamentos.nome AS formaPagamento',
+            'categorias.nome AS Categoria'
         )
-            ->join('forma_pagamentos', 'forma_pagamento_id', 'forma_pagamentos.id')
+            ->join('forma_pagamentos', 'forma_pagamento_id', '=', 'forma_pagamentos.id')
+            ->join('categorias', 'categoria_id', '=', 'categorias.id')
             ->where('data_hora', '>=', $dados['de'] . ' OO:OO:OO')
             ->where('data_hora', '<=', $dados['ate'] . ' 23:59:59')
             ->orderBy('data_hora','ASC')->get();
