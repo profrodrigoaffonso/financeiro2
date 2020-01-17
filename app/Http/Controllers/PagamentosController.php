@@ -29,4 +29,32 @@ class PagamentosController extends Controller
 
         return redirect(route('pagamentos.inserir'));
     }
+
+    public function index(){
+
+        return view('pagamentos.index');
+
+    }
+
+    public function filter(Request $request){
+
+        $dados = $request->all();
+
+        $de = $dados['de'];
+        $ate = $dados['ate'];
+
+        $pagamentos = Pagamentos::select(
+
+            'pagamentos.*',
+            'forma_pagamentos.nome AS formaPagamento'
+        )
+            ->join('forma_pagamentos', 'forma_pagamento_id', 'forma_pagamentos.id')
+            ->where('data_hora', '>=', $dados['de'] . ' OO:OO:OO')
+            ->where('data_hora', '<=', $dados['ate'] . ' 23:59:59')
+            ->orderBy('data_hora','ASC')->get();
+
+        return view('pagamentos.index', compact('pagamentos', 'de', 'ate'));
+
+    }
+
 }

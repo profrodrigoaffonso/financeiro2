@@ -54,3 +54,10 @@ Route::prefix('forma-pagamentos')->middleware('auth')->group(function () {
     Route::get('/create', 'FormaPagamentosController@create')->name('forma_pagamentos.create');
     Route::post('/store', 'FormaPagamentosController@store')->name('forma_pagamentos.store');
 });
+
+Route::prefix('pagamentos')->middleware('auth')->group(function () {
+    Route::get('/', 'PagamentosController@index')->name('pagamentos.index');
+    Route::post('/filter', 'PagamentosController@filter')->name('pagamentos.filter');
+    Route::get('/create', 'PagamentosController@create')->name('pagamentos.create');
+    Route::post('/store', 'PagamentosController@store')->name('pagamentos.store');
+});
