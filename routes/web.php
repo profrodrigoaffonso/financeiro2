@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect(route('login.login'));
 });
 
 Route::get('/login', function () {
