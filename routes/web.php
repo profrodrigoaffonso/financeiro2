@@ -11,9 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('/login');
-});
+if($_SERVER['HTTP_HOST'] == 'localhost'){
+    Route::get('/', function () {
+        return redirect(route('login.login'));
+    });
+} else {
+    Route::get('/', function () {
+        return redirect('https://financeiro.profracosta.com.br/login');
+    });
+}
+    
 
 Route::get('/login', function () {
     return view('auth.login');
