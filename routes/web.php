@@ -67,4 +67,6 @@ Route::prefix('pagamentos')->middleware('auth')->group(function () {
     Route::post('/filter', 'PagamentosController@filter')->name('pagamentos.filter');
     Route::get('/create', 'PagamentosController@create')->name('pagamentos.create');
     Route::post('/store', 'PagamentosController@store')->name('pagamentos.store');
+    Route::get('/exportar', 'PagamentosController@exportar')->name('pagamentos.exportar');
+    Route::post('/exec-exportar', 'PagamentosController@execExportar')->name('pagamentos.exec-exportar');
 });
