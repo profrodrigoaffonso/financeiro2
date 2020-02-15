@@ -11,7 +11,7 @@
 |
 */
 
-if($_SERVER['HTTP_HOST'] == 'localhost'){
+if($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '10.0.0.104'){
     Route::get('/', function () {
         return redirect(route('login.login'));
     });
